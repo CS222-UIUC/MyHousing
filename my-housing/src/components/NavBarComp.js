@@ -12,7 +12,7 @@ export default function NavBarComp() {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav
-                        className="me-auto my-2 my-lg-0"
+                        className="me-auto my-2 my-lg-10"
                         style={{ maxHeight: '100px' }}
                     >
                         <Nav.Link href="#action1">Reviews</Nav.Link>
