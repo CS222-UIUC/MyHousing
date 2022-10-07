@@ -4,18 +4,18 @@ from apps.reviews.models import Reviews
 
 
 class HousingInfo(models.Model):
-    HousingId = models.BigAutoField(primary_key=True)
-    HousingName = models.CharField(max_length=500)
+    housing_id = models.BigAutoField(primary_key=True)
+    housing_name = models.CharField(max_length=500)
 
     HOUSING_TYPE_CHOICES = []
-    HousingType = models.CharField(max_length=2)
+    housing_type = models.CharField(max_length=2)
 
-    ImageFileName = models.CharField(max_length=500)
+    image_filename = models.CharField(max_length=500)
 
     def __str__(self) -> str:
         return self.HousingName
 
     # HousingReviews will be an array of ReviewsId
     # HousingReviews = ArrayField(
-    #     models.ForeignKey(Reviews, on_delete=models.CASCADE)
+        # models.ForeignKey(Reviews, on_delete=models.CASCADE)
     # )

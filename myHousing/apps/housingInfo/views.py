@@ -6,7 +6,7 @@ from .models import HousingInfo
 class HousingInfoSerializer(serializers.Serializer):
     class Meta:
         model = HousingInfo
-        fields = ["HousingId", "HousingName", "HousingType", "ImageFileName"]
+        fields = ["housing_id", "housing_name", "housing_type", "image_filename"]
 
 
 # Create your views here.

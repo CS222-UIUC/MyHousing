@@ -3,9 +3,9 @@ from django.core.validators import *
 
 # Create your models here.
 class Reviews(models.Model):
-    ReviewId = models.BigAutoField(primary_key=True)
+    review_id = models.BigAutoField(primary_key=True)
     # HousingId = models.ForeignKey(Housing)
     # UserId = models.ForeignKey(User)
-    Title = models.CharField(max_length=150)
-    Body = models.TextField()
-    Stars = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
+    title = models.CharField(max_length=50, default="Insert Your Title Here.", editable=False)
+    body = models.TextField(max_length=200, default="Insert Your Text Here.", editable=False)
+    stars = models.IntegerField(default=1, validators=[MinValueValidator(1), MaxValueValidator(5)])
