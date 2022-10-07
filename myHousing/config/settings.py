@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "apps.users",
     "apps.housingInfo",
-    "apps.reviews"
+    "apps.reviews",
 ]
 
 MIDDLEWARE = [
@@ -91,7 +91,6 @@ DATABASES = {
         "PORT": os.getenv("PORT", "5432"),
     }
 }
-
 
 
 # Password validation

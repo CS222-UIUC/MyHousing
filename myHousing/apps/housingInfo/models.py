@@ -18,5 +18,5 @@ class HousingInfo(models.Model):
 
     # HousingReviews will be an array of ReviewsId
     # HousingReviews = ArrayField(
-        # models.ForeignKey(Reviews, on_delete=models.CASCADE)
+    # models.ForeignKey(Reviews, on_delete=models.CASCADE)
     # )
