@@ -1,3 +1,4 @@
+from email.policy import default
 from django.contrib.postgres.fields import ArrayField
 from django.db import models
 from apps.reviews.models import Reviews
@@ -5,7 +6,7 @@ from apps.reviews.models import Reviews
 
 class HousingInfo(models.Model):
     housing_id = models.BigAutoField(primary_key=True)
-    housing_name = models.CharField(max_length=500)
+    housing_name = models.CharField(max_length=500, default="", editable=False)
 
     HOUSING_TYPE_CHOICES = []
     housing_type = models.CharField(max_length=2)
@@ -13,7 +14,7 @@ class HousingInfo(models.Model):
     image_filename = models.CharField(max_length=500)
 
     def __str__(self) -> str:
-        return self.HousingName
+        return self.housing_name
 
     # HousingReviews will be an array of ReviewsId
     # HousingReviews = ArrayField(
