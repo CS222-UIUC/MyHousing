@@ -1,7 +1,6 @@
 from email.policy import default
 from django.contrib.postgres.fields import ArrayField
 from django.db import models
-from apps.reviews.models import Reviews
 
 
 class HousingInfo(models.Model):

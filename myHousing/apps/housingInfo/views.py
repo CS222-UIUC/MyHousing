@@ -1,18 +1,20 @@
 from django.shortcuts import render
-from rest_framework import viewsets, serializers
+from rest_framework import viewsets
+from rest_framework.response import Response
+
+from .serializers import HousingInfoSerializer
 from .models import HousingInfo
+from apps.reviews.models import Reviews
+from apps.reviews.views import ReviewsSerializer
 
 
-class HousingInfoSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = HousingInfo
-        fields = ["housing_id", "housing_name", "housing_type", "image_filename"]
-
-    # def create(self, validated_data):
-    #     return HousingInfo.objects.create(**validated_data)
-
-
-# Create your views here.
 class HousingInfoViewSet(viewsets.ModelViewSet):
     queryset = HousingInfo.objects.all()
     serializer_class = HousingInfoSerializer
+
+
+class ReviewsViewSet(viewsets.ViewSet):
+    def list(self, request, housinginfo_pk):
+        queryset = Reviews.objects.filter(housing_info=housinginfo_pk)
+        serializer = ReviewsSerializer(queryset, many=True)
+        return Response(serializer.data)
