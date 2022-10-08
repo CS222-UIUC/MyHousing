@@ -6,12 +6,14 @@ from apps.reviews.models import Reviews
 
 class HousingInfo(models.Model):
     housing_id = models.BigAutoField(primary_key=True)
-    housing_name = models.CharField(max_length=500, default="", editable=False)
+    housing_name = models.CharField(max_length=500, default="")
 
     HOUSING_TYPE_CHOICES = []
     housing_type = models.CharField(max_length=2)
 
     image_filename = models.CharField(max_length=500)
+    # base 64 encoding
+    # multipart
 
     def __str__(self) -> str:
         return self.housing_name
