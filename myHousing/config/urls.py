@@ -20,4 +20,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("rest_framework.urls")),
     path("housinginfo/", include("apps.housingInfo.urls")),
+    path('reviews/', include('apps.reviews.urls')),
 ]

@@ -9,7 +9,7 @@ class HousingInfo(models.Model):
     housing_name = models.CharField(max_length=500, default="")
 
     HOUSING_TYPE_CHOICES = []
-    housing_type = models.CharField(max_length=2)
+    housing_type = models.CharField(max_length=50)
 
     image_filename = models.CharField(max_length=500)
     # base 64 encoding
