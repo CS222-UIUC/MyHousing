@@ -1,6 +1,7 @@
 import './ReviewPage.css';
 import NavBarComp from './NavBarComp';
 import background from "./assets/apt.png";
+import ForumComp from './ForumComp';
 
 function ReviewPage() {
     return (
@@ -22,7 +23,17 @@ function ReviewPage() {
                     </div>
                 </div>
                 <div class="container">
-                    <ul class="cards">
+                    <ForumComp />
+                </div>
+            </body>
+        </div>
+    );
+}
+
+export default ReviewPage;
+
+/*
+<ul class="cards">
                         <li class="card">
                             <div>
                                 <h3 class="card-title">Review 1</h3>
@@ -134,10 +145,4 @@ function ReviewPage() {
                             </div>
                         </li>
                     </ul>
-                </div>
-            </body>
-        </div>
-    );
-}
-
-export default ReviewPage;
+*/
