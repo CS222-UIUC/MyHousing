@@ -1,65 +1,61 @@
-import React from "react"
+import { useCallback } from "react";
 
-import Col from 'react-bootstrap/Col';
-import Form from 'react-bootstrap/Form';
-import Row from 'react-bootstrap/Row';
+import "survey-core/defaultV2.min.css";
+import { StylesManager, Model } from "survey-core";
+import { Survey } from "survey-react-ui";
+
+StylesManager.applyTheme("defaultV2");
+
+const surveyJson = {
+  elements: [
+    {
+      name: "smoke",
+      title: "Do you smoke? (orange)",
+      type: "dropdown",
+      choices: ["Yes", "No"],
+      isRequired: true,
+
+    },
+    {
+      name: "pets",
+      title: "Do you have pets?",
+      type: "dropdown",
+      choices: ["Yes", "No"],
+      isRequired: true,
+    }, 
+    {
+      name: "major",
+      title: "What is your major?",
+      type: "text",
+      isRequired: true,
+    }, 
+    {
+      name: "hobbies",
+      title: "Write down 5 hobbies/interests you would like to share?",
+      type: "text",
+      isRequired: true,
+    }, 
+    {
+      name: "other",
+      title: "Is there anything else you would like people to know?",
+      type: "text",
+      isRequired: false
+    }
+  ]
+};
 
 function FormPage() {
-  return (
-    <div >
-      <Row>
-        <Form.Label class = "font-bold text-xl pt-10 ml-10" column="lg" lg={2}>
-          Roomate Matching
-        </Form.Label>
-        <Row>
-        <Form.Label class = "pt-10 ml-10" column="lg" lg={2}>
-          Fill out this Survey to Find a Potential Roomate
-        </Form.Label>
-        </Row>
-      </Row>
-      <Row>
-        <Form.Label class = "p-10 ml-auto" column="lg" lg={2}>
-          Do you Smoke?
-        </Form.Label>
-        <Row>
-          <Form.Control class = "ml-10 w-auto " size="lg" type="text" placeholder="Enter Response Here" />
-        </Row>
-      </Row>
-      <Row>
-      <Form.Label class = "pt-10 ml-10" column="lg" lg={2}>
-          Do you have Pets?
-        </Form.Label>
-        <Row>
-          <Form.Control class = "ml-10 w-auto" size="lg" type="text" placeholder="Enter Response Here" />
-        </Row>
-      </Row>
-      <Row>
-      <Form.Label class = "pt-10 ml-10" column="lg" lg={2}>
-          What is your major?
-        </Form.Label>
-        <Row>
-          <Form.Control class = "ml-10 w-auto" size="lg" type="text" placeholder="Enter Response Here" />
-        </Row>
-      </Row>
-      <Row>
-      <Form.Label class = "pt-10 ml-10" column="lg" lg={2}>
-          Write down 5 hobbies/interests you would like to share?
-        </Form.Label>
-        <Row>
-          <Form.Control class = "ml-10 w-auto" size="lg" type="text" placeholder="Enter Response Here"/>
-        </Row>
-      </Row>
-      <Row>
-      <Form.Label class = "pt-10 ml-10" column="lg" lg={2}>
-          Is there anything else you would like people to know
-        </Form.Label>
-        <Row>
-          <Form.Control class = "ml-10 w-auto" size="lg" type="text" placeholder="Enter Response Here" />
-        </Row>
-      </Row>
-      <br />
-    </div>
-  );
+  const survey = new Model(surveyJson);
+  survey.focusFirstQuestionAutomatic = false;
+
+  const alertResults = useCallback((sender) => {
+    const results = JSON.stringify(sender.data);
+    alert(results);
+  }, []);
+
+  survey.onComplete.add(alertResults);
+
+  return <Survey model={survey} />;
 }
 
 export default FormPage;
