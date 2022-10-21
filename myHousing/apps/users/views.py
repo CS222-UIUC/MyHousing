@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from knox.models import AuthToken
 from .serializers import UserSerializer, RegisterSerializer, AuthTokenSerializer
 from knox.views import LoginView as KnoxLoginView
+from .models import User
 
 
 # Create your views here.
@@ -33,3 +34,14 @@ class LoginAPI(KnoxLoginView):
         user = serializer.validated_data["user"]
         login(request, user)
         return super(LoginAPI, self).post(request, format=None)
+
+
+# Used to debug/test
+class UserList(generics.ListAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+
+class UserDetail(generics.RetrieveAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
