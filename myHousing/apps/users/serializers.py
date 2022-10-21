@@ -1,15 +1,20 @@
+from apps.reviews.models import Reviews
 from django.contrib.auth import authenticate
 from django.utils.translation import gettext_lazy as _
 
-from rest_framework import serializers
+from rest_framework import serializers, generics
 
 from .models import User
 
 
 class UserSerializer(serializers.ModelSerializer):
+    reviews = serializers.PrimaryKeyRelatedField(
+        many=True, queryset=Reviews.objects.all()
+    )
+
     class Meta:
         model = User
-        fields = ("id", "email")
+        fields = ("id", "email", "reviews")
 
 
 class RegisterSerializer(serializers.ModelSerializer):

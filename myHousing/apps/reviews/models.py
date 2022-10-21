@@ -7,7 +7,9 @@ from apps.users.models import User
 class Reviews(models.Model):
     review_id = models.BigAutoField(primary_key=True)
     housing_info = models.ForeignKey(HousingInfo, on_delete=models.CASCADE)
-    # user_id = models.ForeignKey(User, on_delete=models.CASCADE, default=0)
+    owner = models.ForeignKey(
+        "users.User", related_name="reviews", on_delete=models.CASCADE
+    )
 
     title = models.CharField(
         max_length=50,
