@@ -84,11 +84,19 @@ WSGI_APPLICATION = "config.wsgi.application"
 load_dotenv()
 
 DATABASES = {
+    # "default": {
+    #     "ENGINE": "django.db.backends.postgresql_psycopg2",
+    #     "NAME": os.getenv("NAME", "db_name"),
+    #     "USER": os.getenv("USER", "db_user"),
+    #     "PASSWORD": os.getenv("PASSWORD", "db_password"),
+    #     "HOST": os.getenv("HOST", "localhost"),
+    #     "PORT": os.getenv("PORT", "5432"),
+    # }
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": os.getenv("NAME", "db_name"),
-        "USER": os.getenv("USER", "db_user"),
-        "PASSWORD": os.getenv("PASSWORD", "db_password"),
+        "NAME": 'my_housing',
+        "USER": 'mh_admin',
+        "PASSWORD": '12345',
         "HOST": os.getenv("HOST", "localhost"),
         "PORT": os.getenv("PORT", "5432"),
     }
@@ -135,3 +143,5 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# AUTH_USER_MODEL = "apps.users.User"
