@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "apps.users",
     "apps.housingInfo",
     "apps.reviews",
+    "core",
 ]
 
 MIDDLEWARE = [
@@ -145,3 +146,5 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# AUTH_USER_MODEL = "apps.users.User"
