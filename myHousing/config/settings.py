@@ -84,19 +84,11 @@ WSGI_APPLICATION = "config.wsgi.application"
 load_dotenv()
 
 DATABASES = {
-    # "default": {
-    #     "ENGINE": "django.db.backends.postgresql_psycopg2",
-    #     "NAME": os.getenv("NAME", "db_name"),
-    #     "USER": os.getenv("USER", "db_user"),
-    #     "PASSWORD": os.getenv("PASSWORD", "db_password"),
-    #     "HOST": os.getenv("HOST", "localhost"),
-    #     "PORT": os.getenv("PORT", "5432"),
-    # }
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": 'my_housing',
-        "USER": 'mh_admin',
-        "PASSWORD": '12345',
+        "NAME": os.getenv("NAME", "db_name"),
+        "USER": os.getenv("USER", "db_user"),
+        "PASSWORD": os.getenv("PASSWORD", "db_password"),
         "HOST": os.getenv("HOST", "localhost"),
         "PORT": os.getenv("PORT", "5432"),
     }
