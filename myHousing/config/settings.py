@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     "apps.users",
     "apps.housingInfo",
     "apps.reviews",
-    "core",
 ]
 
 MIDDLEWARE = [
@@ -88,7 +87,7 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
         "NAME": os.getenv("NAME", "db_name"),
-        "USER": os.getenv("DB_USER", "db_user"),
+        "USER": os.getenv("USER", "db_user"),
         "PASSWORD": os.getenv("PASSWORD", "db_password"),
         "HOST": os.getenv("HOST", "localhost"),
         "PORT": os.getenv("PORT", "5432"),
@@ -98,9 +97,6 @@ DATABASES = {
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
         "knox.auth.TokenAuthentication",
-    ],
-    "DEFAULT_PERMISSION_CLASSES": [
-        "rest_framework.permissions.IsAuthenticatedOrReadOnly",
     ],
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
     "PAGE_SIZE": 20,
@@ -146,5 +142,3 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
-# AUTH_USER_MODEL = "apps.users.User"
