@@ -8,12 +8,14 @@ from apps.reviews.models import Reviews
 from apps.reviews.views import ReviewsSerializer
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from config.permissions import IsOwnerOrReadOnly
+from rest_framework.parsers import MultiPartParser, FormParser
 
 
 class HousingInfoViewSet(viewsets.ModelViewSet):
     permission_classes = (IsAuthenticatedOrReadOnly,)
     queryset = HousingInfo.objects.all()
     serializer_class = HousingInfoSerializer
+    parser_classes = (MultiPartParser, FormParser)
 
 
 class ReviewsViewSet(viewsets.ViewSet):

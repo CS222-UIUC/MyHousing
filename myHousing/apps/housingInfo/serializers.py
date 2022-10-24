@@ -4,6 +4,8 @@ from .models import HousingInfo
 
 
 class HousingInfoSerializer(serializers.ModelSerializer):
+    image_filename = serializers.ImageField(required=False)
+
     class Meta:
         model = HousingInfo
         fields = ("housing_id", "housing_name", "housing_type", "image_filename")
