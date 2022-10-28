@@ -8,7 +8,7 @@ class HousingInfoSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = HousingInfo
-        fields = ("housing_id", "housing_name", "housing_type", "image_filename")
+        fields = ("housing_id", "housing_name", "housing_types", "housing_price", "housing_location", "image_filename")
 
 
 # get all reviews with housing info '/housinginfo/id/reviews'
