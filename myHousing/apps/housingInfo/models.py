@@ -13,14 +13,6 @@ def validate_zipcode(value):
             _('%(value)s is not a valid zipcode!'),
             params={"value": value},
         )
-class Address(models.Model):
-    street_address = models.CharField(max_length=100)
-    street_address_two = models.CharField(max_length=100)
-    city = models.CharField(max_length=100, default="Champaign")
-    state = models.CharField(max_length=100, default="Illinois")
-    #country will be default to US
-    country = models.CharField(max_length=50, default="United States")
-    zip = models.IntegerField(validators=[validate_zipcode])
 
 HOUSING_CHOICES = (
     ("1B", "1 Bedroom"),
@@ -36,7 +28,14 @@ class HousingInfo(models.Model):
 
     housing_types = ArrayField(models.CharField(max_length=2, choices=HOUSING_CHOICES, blank=True, null=True), blank=True, null=True) # Array of available housing_choices
     housing_price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
-    housing_location = models.ForeignKey("Address", on_delete=models.SET_NULL, blank=True, null=True)
+    street_address = models.CharField(max_length=100, null=True, blank=True)
+    street_address_two = models.CharField(max_length=100, null=True, blank=True)
+    city = models.CharField(max_length=100, default="Champaign")
+    state = models.CharField(max_length=100, default="Illinois")
+    #country will be default to US
+    country = models.CharField(max_length=50, default="United States")
+    zip = models.IntegerField(validators=[validate_zipcode], null=True, blank=True)
+
     housing_description = models.CharField(max_length=500, default="This is where the description goes!")
     # housing_reviews = ArrayField(models.ForeignKey)
 
