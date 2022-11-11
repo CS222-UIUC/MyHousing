@@ -11,6 +11,8 @@ class Reviews(models.Model):
         "users.User", related_name="reviews", on_delete=models.CASCADE
     )
 
+    is_currently_resident = models.BooleanField()
+
     title = models.CharField(
         max_length=50,
         default="Insert Your Title Here.",
