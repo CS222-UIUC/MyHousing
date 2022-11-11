@@ -8,15 +8,18 @@ import Reviews from './components/Reviews';
 import FormPage from './components/FormPage'
 import RegistrationPage from './components/RegistrationPage';
 import SignInPage from './components/SignInPage';
-import TestScroll from './components/TestScroll';
+//import TestScroll from './components/TestScroll';
 import ProfilePage from './components/ProfilePage';
 import { Link } from "react-scroll";
 import { render } from "react-dom";
+import {GoogleMap, useLoadScript, Marker} from "@react-google-maps/api"
+import MapAPI from "./components/MapAPI";
 
 
 //import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
+  
   const [signInState, setSignInState] = React.useState(true);
   const [signRegistration, setRegistration] = React.useState(true);
   function toggle() {
@@ -38,8 +41,10 @@ function App() {
     renderComponents = <RegistrationPage/>;
   } else {
     renderComponents = <div> 
+      <section id = "map"><MapAPI/></section>
       <section id = "reviews"><Reviews /></section>
-      <section id = "roomate-finder"><FormPage/></section> </div>
+      <section id = "form-page"><FormPage/></section>
+       </div>
   }
   return (
     <div>
@@ -54,7 +59,7 @@ function App() {
                         style={{ maxHeight: '100px' }}
                     >
                         <Link href="#action2" activeClass="active" smooth spy to="reviews">Reviews</Link>
-                        <Link href="#action2" activeClass="active" smooth spy to="roomate-finder">Roomate Finder</Link>
+                        <Link href="#action2" activeClass="active" smooth spy to="form-page">Roomate Finder</Link>
                     </Nav>
                     <Form className="d-flex">
                         <Button onClick={toggle} varient="primary" className="me-2" style={{ color: "white", background: "orange", borderColor:"orange"}}>Login</Button>
@@ -64,6 +69,7 @@ function App() {
             </Container>
         </Navbar>    
         </nav>
+        
       {renderComponents}
       {/*
       <SignInPage/>
@@ -71,6 +77,7 @@ function App() {
       <Reviews/> */}
        {/* <ProfilePage/> */}
       {/* <FormPage/> */}
+      
     </div>
     
   );
