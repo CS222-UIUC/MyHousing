@@ -1,22 +1,30 @@
-import React from "react"
-import { MDBInputGroup, MDBInput, MDBIcon, MDBAlert, MDBBtn } from 'mdb-react-ui-kit';
+import React, {useState} from "react"
+import { MDBInputGroup, MDBInput, MDBIcon, MDBBtn } from 'mdb-react-ui-kit';
+import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card';
+import InputGroup from 'react-bootstrap/InputGroup';
+import Form from 'react-bootstrap/Form';
 import logo from "./212_East_apartment.jpg"
 import logo1 from "./5stars.png"
+import "./Reviews.css"
 
 function Reviews() {
+    //const [showSearchAlert, setShowSearchAlert] = useState(false);
     return(
-        <div className="pt-10">
-            <div className = "flex">
-            <h1 className = "font-sans-Montserrat pl-10 pr-20 fw-700">Reviews</h1>
-                <MDBInputGroup>
-                    <MDBInput label='Search'> </MDBInput>
-                    <MDBBtn color = "black" onClick={() => setShowSearchAlert(true)} rippleColor='dark'>
-                    <MDBIcon icon='search' />
-                    </MDBBtn>
-                </MDBInputGroup>
+        <div >
+            <div>
+            <h1 className = "reviews pl-10 fw-700">Reviews</h1>
+            <InputGroup className="mb-3 pl-10">
+            <Form.Control
+            placeholder="Recipient's username"
+            aria-label="Recipient's username"
+            aria-describedby="basic-addon2"
+            />
+        <Button variant="outline-secondary" id="button-addon2">
+          Search
+        </Button>
+      </InputGroup>
             </div>
-            <div><p className = "pl-10">Search here for reviews from tenants on realty companies near you</p></div>
             <div>
             <Card style={{ width: '20rem' }} className = "ml-10">
                 <Card.Img variant="top" src={logo} />

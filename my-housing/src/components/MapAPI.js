@@ -15,7 +15,7 @@ export default function MapAPI() {
 function Map() {
     const center = useMemo(() => ({ lat: 40.1164, lng: -88.2434 }), []);
     return ( 
-    <GoogleMap zoom={15} center= {center}  mapContainerClassName="map-container">
+    <GoogleMap zoom={15} center= {center}  mapContainerClassName="map-container ml-auto mr-auto">
         <MarkerF key = "center" position={{ lat: 40.1164, lng: -88.2434 }}/>
         <MarkerF  key = "here-apartment" position={{ lat: 40.1105385, lng: -88.23423 }}>
             <InfoWindow position = {{ lat: 40.1105385, lng: -88.23423 }}><div><img src={logo1} width="100px" height="100px"/></div></InfoWindow> 
