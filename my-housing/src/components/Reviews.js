@@ -16,8 +16,8 @@ function Reviews() {
             <h1 className = "reviews pl-10 fw-700">Reviews</h1>
             <InputGroup className="mb-3 pl-10">
             <Form.Control
-            placeholder="Recipient's username"
-            aria-label="Recipient's username"
+            placeholder="Apartment Name"
+            aria-label="Apartment Name"
             aria-describedby="basic-addon2"
             />
         <Button variant="outline-secondary" id="button-addon2">
