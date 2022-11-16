@@ -1,12 +1,15 @@
+import React from "react"
 import './ReviewPage.css';
-import NavBarComp from './NavBarComp';
 import background from "./assets/apt.png";
 import ForumComp from './ForumComp';
+//import SignInPage from './SignInPage';
+//import RegistrationPage from './RegistrationPage';
+
 
 function ReviewPage() {
     return (
         <div className="ReviewPage">
-            <NavBarComp />
+            {/* <NavBarComp /> */}
             <header class="relative flex items-center justify-center h-screen mb-12 overflow-hidden">
                 <div
                     class="relative z-50 p-5 text-5xl text-white"

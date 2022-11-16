@@ -20,9 +20,9 @@ function Reviews() {
             aria-label="Apartment Name"
             aria-describedby="basic-addon2"
             />
-        <Button variant="outline-secondary" id="button-addon2">
+        {/* <Button variant="outline-secondary" id="button-addon2" >
           Search
-        </Button>
+        </Button> */}
       </InputGroup>
             </div>
             <div>
