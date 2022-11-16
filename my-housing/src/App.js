@@ -17,15 +17,12 @@ import MapAPI from "./components/MapAPI";
 //import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
-  const navToReviewPage = useNavigate();
+  
   const navToHomePage = useNavigate();
   const navToSignInPage = useNavigate();
   const navToRegistrationPage = useNavigate();
 
-  const navigateToReviewPage = () => {
-    navToReviewPage('/reviewPage');
-    
-  }
+  
   const navigateToHomePage = () => {
     navToHomePage('/')
   }
@@ -38,35 +35,19 @@ function App() {
     navToRegistrationPage('/registrationPage')
   }
 
-  const [signInState, setSignInState] = React.useState(true);
-  const [signRegistration, setRegistration] = React.useState(true);
-  function toggle() {
-    setSignInState(false)
-    setRegistration(true)
-  }
-  function toggle1() {
-    setSignInState(true)
-    setRegistration(false)
-  }
-  function refreshPage() {
-    window.location.reload(false);
-  }
 
-  let renderComponents;
-  if (!signInState && signRegistration) {
-    renderComponents = <SignInPage />;
-  } else if (signInState && !signRegistration) {
-    renderComponents = <RegistrationPage />;
-  } else {
-    renderComponents = <div>
-      <section id="map"><MapAPI /></section>
-      <section id="reviews"><Reviews></Reviews>
-        <Button onClick={navigateToReviewPage} className="ml-10" variant="outline-secondary" id="button-addon2" >
-          Search
-        </Button> </section>
-      <section id="form-page"><FormPage /></section>
-    </div>
-  }
+  // let renderComponents;
+  // if (!signInState && signRegistration) {
+  //   renderComponents = <SignInPage />;
+  // } else if (signInState && !signRegistration) {
+  //   renderComponents = <RegistrationPage />;
+  // } else {
+  //   renderComponents = <div>
+  //     <section id="map"><MapAPI /></section>
+  //     <section id="reviews"><Reviews></Reviews> </section>
+  //     <section id="form-page"><FormPage /></section>
+  //   </div>
+  // }
   return (
     <div>
       <nav>
@@ -79,8 +60,8 @@ function App() {
                 className="me-auto my-2 my-lg-0"
                 style={{ maxHeight: '100px' }}
               >
-                <Link href="#action2" activeClass="active" smooth spy to="reviews">Reviews</Link>
-                <Link href="#action2" activeClass="active" smooth spy to="form-page">Roomate Finder</Link>
+                <Link onClick={navigateToHomePage} href="#action2" activeClass="active" smooth spy to="reviews">Reviews</Link>
+                <Link onClick={navigateToHomePage} href="#action2" activeClass="active" smooth spy to="form-page">Roomate Finder</Link>
               </Nav>
               <Form className="d-flex">
                 <Button onClick={navigateToSignInPage} varient="primary" className="me-2" style={{ color: "white", background: "orange", borderColor: "orange" }}>Login</Button>
@@ -93,7 +74,9 @@ function App() {
           <Route path="/reviewPage" element={<ReviewPage/>}></Route>
           <Route path="/signIn" element = {<SignInPage/>}/>
           <Route path='/registrationPage' element = {<RegistrationPage/>}/>
-          <Route path="/" element={renderComponents}/>
+          <Route path="/" element={<div><section id="map"><MapAPI /></section>
+       <section id="reviews"><Reviews></Reviews> </section>
+       <section id="form-page"><FormPage /></section></div>}/>
         </Routes>
       </nav>
 

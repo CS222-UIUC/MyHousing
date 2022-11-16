@@ -1,5 +1,7 @@
 import React, {useState} from "react"
 import { MDBInputGroup, MDBInput, MDBIcon, MDBBtn } from 'mdb-react-ui-kit';
+import { Routes, Route, useNavigate } from 'react-router-dom';
+import ReviewPage from "./ReviewPage";
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card';
 import InputGroup from 'react-bootstrap/InputGroup';
@@ -10,6 +12,11 @@ import "./Reviews.css"
 
 function Reviews() {
     //const [showSearchAlert, setShowSearchAlert] = useState(false);
+    const navToReviewPage = useNavigate();
+    const navigateToReviewPage = () => {
+        navToReviewPage('/reviewPage');
+        
+      }
     return(
         <div >
             <div>
@@ -20,9 +27,9 @@ function Reviews() {
             aria-label="Apartment Name"
             aria-describedby="basic-addon2"
             />
-        {/* <Button variant="outline-secondary" id="button-addon2" >
+        <Button onClick = {navigateToReviewPage} variant="outline-secondary" id="button-addon2" >
           Search
-        </Button> */}
+        </Button>
       </InputGroup>
             </div>
             <div>
@@ -38,6 +45,10 @@ function Reviews() {
                 </Card.Body>
             </Card>
             </div>
+            <Routes>
+                <Route path="/reviewPage" element={<ReviewPage/>}>
+                </Route>
+            </Routes>
         </div>
     )
 }

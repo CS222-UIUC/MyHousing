@@ -7,6 +7,7 @@ import ForumComp from './ForumComp';
 
 
 function ReviewPage() {
+    
     return (
         <div className="ReviewPage">
             {/* <NavBarComp /> */}
