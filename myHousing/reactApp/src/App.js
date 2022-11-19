@@ -1,32 +1,95 @@
-import './App.css';
-import NavBarComp from './components/NavBarComp';
-import background from "./assets/apt.png";
+//import './App.css';
+import React from "react"
+import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Nav, Navbar, Container, Button, Form } from "react-bootstrap"
+// import NavBar from './components/NavBar'
+import Reviews from './components/Reviews';
+import FormPage from './components/FormPage'
+import RegistrationPage from './components/RegistrationPage';
+import SignInPage from './components/SignInPage';
+//import TestScroll from './components/TestScroll';
+import ProfilePage from './components/ProfilePage';
+import ReviewPage from './components/ReviewPage';
+import { Link } from "react-scroll";
+import MapAPI from "./components/MapAPI";
+
+
+//import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
+  
+  const navToHomePage = useNavigate();
+  const navToSignInPage = useNavigate();
+  const navToRegistrationPage = useNavigate();
+
+  
+  const navigateToHomePage = () => {
+    navToHomePage('/')
+  }
+
+  const navigateToSignInPage = () => {
+    navToSignInPage('/signIn')
+  }
+
+  const navigateToRegistrationPage = () => {
+    navToRegistrationPage('/registrationPage')
+  }
+
+
+  // let renderComponents;
+  // if (!signInState && signRegistration) {
+  //   renderComponents = <SignInPage />;
+  // } else if (signInState && !signRegistration) {
+  //   renderComponents = <RegistrationPage />;
+  // } else {
+  //   renderComponents = <div>
+  //     <section id="map"><MapAPI /></section>
+  //     <section id="reviews"><Reviews></Reviews> </section>
+  //     <section id="form-page"><FormPage /></section>
+  //   </div>
+  // }
   return (
-    <div className="App">
-      <NavBarComp />
-      <header class="relative flex items-center justify-center h-screen mb-12 overflow-hidden">
-        <div
-          class="relative z-50 p-5 text-5xl text-white"
-        >
-          Share Your Experiences
-        </div>
-        <img alt="bg" src={background} className="absolute z-10 w-auto min-w-full min-h-full max-w-none blur-sm">
-        </img>
-      </header>
-      <body>
-          <div class="relative">
-            <p class="absolute text-3xl left-20">
-              Reviews
-            </p>
-            <div class="absolute w-50 right-20">
-              <input type="text" placeholder="Search" class="px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full pl-10" />
-            </div>
-          </div>
-          
-      </body>
+    <div>
+      <nav>
+        <Navbar bg="light" expand="lg">
+          <Container fluid>
+            <Navbar.Brand onClick={navigateToHomePage} href="#">MyHousing</Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+              <Nav
+                className="me-auto my-2 my-lg-0"
+                style={{ maxHeight: '100px' }}
+              >
+                <Link onClick={navigateToHomePage} href="#action2" activeClass="active" smooth spy to="reviews">Reviews</Link>
+                <Link onClick={navigateToHomePage} href="#action2" activeClass="active" smooth spy to="form-page">Roomate Finder</Link>
+              </Nav>
+              <Form className="d-flex">
+                <Button onClick={navigateToSignInPage} varient="primary" className="me-2" style={{ color: "white", background: "orange", borderColor: "orange" }}>Login</Button>
+                <Button onClick={navigateToRegistrationPage} varient="primary" className="me-2" style={{ color: "orange", background: "white", borderColor: "orange" }}>Register</Button>
+              </Form>
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>
+        <Routes>
+          <Route path="/reviewPage" element={<ReviewPage/>}></Route>
+          <Route path="/signIn" element = {<SignInPage/>}/>
+          <Route path='/registrationPage' element = {<RegistrationPage/>}/>
+          <Route path="/" element={<div><section id="map"><MapAPI /></section>
+       <section id="reviews"><Reviews></Reviews> </section>
+       <section id="form-page"><FormPage /></section></div>}/>
+        </Routes>
+      </nav>
+
+      {/* {renderComponents} */}
+      {/*
+      <SignInPage/>
+      <RegistrationPage/>
+      <Reviews/> */}
+      {/* <ProfilePage/> */}
+      {/* <FormPage/> */}
+
     </div>
+
   );
 }
 
