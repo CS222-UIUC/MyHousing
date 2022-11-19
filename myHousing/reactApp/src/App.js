@@ -13,11 +13,16 @@ import ReviewPage from './components/ReviewPage';
 import { Link } from "react-scroll";
 import MapAPI from "./components/MapAPI";
 
+import store from './store';
+import { loadUser } from './actions/auth';
+import {Provider} from "react-redux"; 
 
 //import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   
+  store.dispatch(loadUser());
+
   const navToHomePage = useNavigate();
   const navToSignInPage = useNavigate();
   const navToRegistrationPage = useNavigate();
@@ -49,6 +54,7 @@ function App() {
   //   </div>
   // }
   return (
+    <Provider store={store}>
     <div>
       <nav>
         <Navbar bg="light" expand="lg">
@@ -89,7 +95,7 @@ function App() {
       {/* <FormPage/> */}
 
     </div>
-
+    </Provider>
   );
 }
 
