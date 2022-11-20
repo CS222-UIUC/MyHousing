@@ -93,7 +93,6 @@ export class RegisterationPage extends Component {
                     value={password2}
                   />
                 </div>
-
                 <MDBBtn type="submit" className="mb-4" size="lg">
                   Register
                 </MDBBtn>
