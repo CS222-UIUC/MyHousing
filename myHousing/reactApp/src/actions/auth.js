@@ -1,5 +1,5 @@
-import axios from 'axios';
-import { returnErrors } from './messages';
+import axios from "axios";
+import { returnErrors } from "./messages";
 
 import {
   USER_LOADED,
@@ -10,7 +10,7 @@ import {
   LOGOUT_SUCCESS,
   REGISTER_SUCCESS,
   REGISTER_FAIL,
-} from './types';
+} from "./types";
 
 // CHECK TOKEN & LOAD USER
 export const loadUser = () => (dispatch, getState) => {
@@ -18,7 +18,7 @@ export const loadUser = () => (dispatch, getState) => {
   dispatch({ type: USER_LOADING });
 
   axios
-    .get('http://127.0.0.1:8000/user/', tokenConfig(getState))
+    .get("http://127.0.0.1:8000/user/", tokenConfig(getState))
     .then((res) => {
       dispatch({
         type: USER_LOADED,
@@ -38,16 +38,15 @@ export const login = (email, password) => (dispatch) => {
   // Headers
   const config = {
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
   };
 
   // Request Body
   const body = JSON.stringify({ email, password });
 
-  console.log(body);
   axios
-    .post('http://127.0.0.1:8000/login/', body, config)
+    .post("http://127.0.0.1:8000/login/", body, config)
     .then((res) => {
       dispatch({
         type: LOGIN_SUCCESS,
@@ -63,37 +62,39 @@ export const login = (email, password) => (dispatch) => {
 };
 
 // REGISTER USER
-export const register = ({ email, password }) => (dispatch) => {
-  // Headers
-  const config = {
-    headers: {
-      'Content-Type': 'application/json',
-    },
+export const register =
+  ({ email, password }) =>
+  (dispatch) => {
+    // Headers
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    // Request Body
+    const body = JSON.stringify({ email, password });
+
+    axios
+      .post("http://127.0.0.1:8000/register/", body, config)
+      .then((res) => {
+        dispatch({
+          type: REGISTER_SUCCESS,
+          payload: res.data,
+        });
+      })
+      .catch((err) => {
+        dispatch(returnErrors(err.response.data, err.response.status));
+        dispatch({
+          type: REGISTER_FAIL,
+        });
+      });
   };
-
-  // Request Body
-  const body = JSON.stringify({ email, password });
-
-  axios
-    .post('http://127.0.0.1:8000/register/', body, config)
-    .then((res) => {
-      dispatch({
-        type: REGISTER_SUCCESS,
-        payload: res.data,
-      });
-    })
-    .catch((err) => {
-      dispatch(returnErrors(err.response.data, err.response.status));
-      dispatch({
-        type: REGISTER_FAIL,
-      });
-    });
-};
 
 // LOGOUT USER
 export const logout = () => (dispatch, getState) => {
   axios
-    .post('http://127.0.0.1:8000/logout/', null, tokenConfig(getState))
+    .post("http://127.0.0.1:8000/logout/", null, tokenConfig(getState))
     .then((res) => {
       dispatch({
         type: LOGOUT_SUCCESS,
@@ -112,13 +113,13 @@ export const tokenConfig = (getState) => {
   // Headers
   const config = {
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
   };
 
   // If token, add to headers config
   if (token) {
-    config.headers['Authorization'] = `Token ${token}`;
+    config.headers["Authorization"] = `Token ${token}`;
   }
   return config;
 };
