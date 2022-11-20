@@ -98,7 +98,7 @@ export class RegisterationPage extends Component {
                   Register
                 </MDBBtn>
                 <p>
-                  Already have an account? <Link to="/login">Login</Link>
+                  Already have an account? <Link to="/signIn">Login</Link>
                 </p>
               </form>
             </MDBCol>
