@@ -36,23 +36,23 @@ class HousingInfo(models.Model):
         blank=True,
         null=True,
     )  # Array of available housing_choices
+
     housing_price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+
     street_address = models.CharField(max_length=100, null=True, blank=True)
     street_address_two = models.CharField(max_length=100, null=True, blank=True)
     city = models.CharField(max_length=100, default="Champaign")
     state = models.CharField(max_length=100, default="Illinois")
-    # country will be default to US
     country = models.CharField(max_length=50, default="United States")
     zip = models.IntegerField(validators=[validate_zipcode], null=True, blank=True)
 
     housing_description = models.CharField(
         max_length=5000, default="This is where the description goes!"
     )
-    # housing_reviews = ArrayField(models.ForeignKey)
 
-    image_filename = models.ImageField(null=True, blank=True, upload_to=upload_to)
-    # base 64 encoding
-    # multipart
+    image_filename = models.ImageField(
+        null=True, blank=True, upload_to=upload_to
+    )  # Upload file using multipart
 
     def __str__(self) -> str:
         return self.housing_name

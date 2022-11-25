@@ -22,6 +22,3 @@ class HousingInfoSerializer(serializers.ModelSerializer):
             "housing_description",
             "image_filename",
         )
-
-
-# get all reviews with housing info '/housinginfo/id/reviews'
