@@ -12,9 +12,7 @@ import {
   REGISTER_FAIL,
 } from "./types";
 
-// CHECK TOKEN & LOAD USER
 export const loadUser = () => (dispatch, getState) => {
-  // User Loading
   dispatch({ type: USER_LOADING });
 
   axios
@@ -33,16 +31,13 @@ export const loadUser = () => (dispatch, getState) => {
     });
 };
 
-// LOGIN USER
 export const login = (email, password) => (dispatch) => {
-  // Headers
   const config = {
     headers: {
       "Content-Type": "application/json",
     },
   };
 
-  // Request Body
   const body = JSON.stringify({ email, password });
 
   axios
@@ -61,18 +56,15 @@ export const login = (email, password) => (dispatch) => {
     });
 };
 
-// REGISTER USER
 export const register =
   ({ email, password }) =>
   (dispatch) => {
-    // Headers
     const config = {
       headers: {
         "Content-Type": "application/json",
       },
     };
 
-    // Request Body
     const body = JSON.stringify({ email, password });
 
     axios
@@ -91,7 +83,6 @@ export const register =
       });
   };
 
-// LOGOUT USER
 export const logout = () => (dispatch, getState) => {
   axios
     .post("http://127.0.0.1:8000/logout/", null, tokenConfig(getState))
@@ -105,19 +96,15 @@ export const logout = () => (dispatch, getState) => {
     });
 };
 
-// Setup config with token - helper function
 export const tokenConfig = (getState) => {
-  // Get token from state
   const token = getState().auth.token;
 
-  // Headers
   const config = {
     headers: {
       "Content-Type": "application/json",
     },
   };
 
-  // If token, add to headers config
   if (token) {
     config.headers["Authorization"] = `Token ${token}`;
   }

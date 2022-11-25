@@ -31,7 +31,6 @@ export class RegisterationPage extends Component {
     const { email, password, password2 } = this.state;
     if (password !== password2) {
       this.props.createMessage({ passwordNotMatch: "Passwords do not match" });
-      console.log("Passwords do not match");
     } else {
       const newUser = {
         email,

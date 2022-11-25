@@ -18,7 +18,6 @@ export class SignInPage extends Component {
   };
 
   onSubmit = (e) => {
-    console.log("BJFJSDLKF");
     e.preventDefault();
     this.props.login(this.state.email, this.state.password);
   };
