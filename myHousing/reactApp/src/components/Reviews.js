@@ -9,6 +9,7 @@ import Form from 'react-bootstrap/Form';
 import logo from "./212_East_apartment.jpg"
 import logo1 from "./5stars.png"
 import "./Reviews.css"
+import ReviewListAPI from "./ReviewListAPI";
 
 function Reviews() {
     //const [showSearchAlert, setShowSearchAlert] = useState(false);
@@ -33,17 +34,7 @@ function Reviews() {
       </InputGroup>
             </div>
             <div>
-            <Card style={{ width: '20rem' }} className = "ml-10">
-                <Card.Img variant="top" src={logo} />
-                <Card.Body>
-                    <Card.Title>Company Name</Card.Title>
-                    <Card.Img variant="top" src={logo1} />
-                    <Card.Text>
-                    "MyHousing helped me find the best space to live this semester" - User
-                    </Card.Text>
-                    {/* <Button variant="primary">Go somewhere</Button> */}
-                </Card.Body>
-            </Card>
+            <ReviewListAPI/>
             </div>
             <Routes>
                 <Route path="/reviewPage" element={<ReviewPage/>}>
