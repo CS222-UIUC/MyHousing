@@ -5,9 +5,6 @@ from .models import Reviews
 
 
 class ReviewsSerializer(serializers.ModelSerializer):
-    # housing_info = serializers.PrimaryKeyRelatedField(
-    #     queryset=HousingInfo.objects.all()
-    # )
     owner = serializers.ReadOnlyField(source="owner.username")
 
     class Meta:

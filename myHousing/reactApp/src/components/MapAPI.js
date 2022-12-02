@@ -1,4 +1,4 @@
-import {useMemo} from "react";
+import React, {useMemo} from "react";
 import { GoogleMap, useLoadScript, MarkerF, InfoWindow } from "@react-google-maps/api";
 import logo from "./212_East_apartment.jpg"
 import logo1 from "./Here.jpg"
