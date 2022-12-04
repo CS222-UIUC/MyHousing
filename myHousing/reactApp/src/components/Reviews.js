@@ -10,6 +10,7 @@ import logo from "./212_East_apartment.jpg"
 import logo1 from "./5stars.png"
 import "./Reviews.css"
 import ReviewListAPI from "./ReviewListAPI";
+import HousingReviewAPI from "./HousingReviewAPI";
 
 function Reviews() {
     //const [showSearchAlert, setShowSearchAlert] = useState(false);
@@ -35,6 +36,7 @@ function Reviews() {
             </div>
             <div>
             <ReviewListAPI/>
+            <HousingReviewAPI/>
             </div>
             <Routes>
                 <Route path="/reviewPage" element={<ReviewPage/>}>
