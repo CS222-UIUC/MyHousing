@@ -18,7 +18,7 @@ function Reviews() {
     const navigateToReviewPage = () => {
         navToReviewPage('/reviewPage');
         
-      }
+    }
     return(
         <div >
             <div>
@@ -36,7 +36,6 @@ function Reviews() {
             </div>
             <div>
             <ReviewListAPI/>
-            <HousingReviewAPI/>
             </div>
             <Routes>
                 <Route path="/reviewPage" element={<ReviewPage/>}>

@@ -4,6 +4,7 @@ import background from "./assets/apt.png";
 import ForumComp from './ForumComp';
 import {useLocation} from 'react-router-dom';
 import HousingReviewAPI from "./HousingReviewAPI";
+import CreateReview from "./CreateReview.js";
 //import SignInPage from './SignInPage';
 //import RegistrationPage from './RegistrationPage';
 
@@ -27,7 +28,8 @@ function ReviewPage() {
                         <input type="text" placeholder="Search" class="px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full pl-10" />
                     </div>
                 </div>
-                <div className="mt-[2vh] mb-[5vh] ml-[5vw] mr-[5vw]">
+                <div className="mt-[2vh] mb-[5vh] ml-[11vw] mr-[11vw]">
+                    <CreateReview/>
                     <HousingReviewAPI housing_id={location.state.housing_id}/>
                 </div>
                 <div class="container">

@@ -12,6 +12,7 @@ import ProfilePage from './components/ProfilePage';
 import ReviewPage from './components/ReviewPage';
 import { Link } from "react-scroll";
 import MapAPI from "./components/MapAPI";
+import CreateReview from "./components/CreateReview";
 
 
 //import "bootstrap/dist/css/bootstrap.min.css";
@@ -87,7 +88,7 @@ function App() {
       <Reviews/> */}
       {/* <ProfilePage/> */}
       {/* <FormPage/> */}
-
+      
     </div>
 
   );
