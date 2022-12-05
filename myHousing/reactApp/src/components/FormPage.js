@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import React, { useCallback } from "react";
 
 import "survey-core/defaultV2.min.css";
 import { StylesManager, Model } from "survey-core";

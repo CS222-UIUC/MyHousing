@@ -9,6 +9,7 @@ from .models import User
 
 # Create your views here.
 class RegisterAPI(generics.GenericAPIView):
+    permission_classes = (permissions.AllowAny,)
     serializer_class = RegisterSerializer
 
     def post(self, request, *args, **kwargs):
@@ -34,6 +35,14 @@ class LoginAPI(KnoxLoginView):
         user = serializer.validated_data["user"]
         login(request, user)
         return super(LoginAPI, self).post(request, format=None)
+
+
+class UserAPI(generics.RetrieveAPIView):
+    permission_classes = (permissions.IsAuthenticated,)
+    serializer_class = UserSerializer
+
+    def get_object(self):
+        return self.request.user
 
 
 # Used to debug/test

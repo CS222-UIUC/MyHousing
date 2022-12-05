@@ -8,7 +8,9 @@ router = routers.DefaultRouter()
 router.register(r"", HousingInfoViewSet)
 
 reviews_router = routers.NestedSimpleRouter(router, r"", lookup="housinginfo")
-reviews_router.register(r"reviews", ReviewsViewSet, basename="housinginfo_reviews")
+reviews_router.register(
+    r"reviews", ReviewsViewSet, basename="housinginfo_reviews"
+)  # housinginfo/<id>/reviews
 
 urlpatterns = [
     path("", include(router.urls)),
