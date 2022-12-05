@@ -7,6 +7,7 @@ import RegistrationPage from "./components/RegistrationPage";
 import SignInPage from "./components/SignInPage";
 import ReviewPage from "./components/ReviewPage";
 import MapAPI from "./components/MapAPI";
+import CreateReview from "./components/CreateReview";
 
 import store from "./store";
 import { loadUser } from "./actions/auth";
