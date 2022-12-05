@@ -9,4 +9,12 @@ class ReviewsSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Reviews
-        fields = ("review_id", "housing_info", "owner", "title", "body", "stars")
+        fields = (
+            "review_id",
+            "housing_info",
+            "is_currently_resident",
+            "owner",
+            "title",
+            "body",
+            "stars",
+        )
