@@ -33,7 +33,7 @@ function ReviewPage() {
           </div>
         </div>
         <div className="mt-[2vh] mb-[5vh] ml-[11vw] mr-[11vw]">
-          <CreateReview />
+          <CreateReview id={location.state.housing_id} />
           <HousingReviewAPI housing_id={location.state.housing_id} />
         </div>
         <div class="container">
