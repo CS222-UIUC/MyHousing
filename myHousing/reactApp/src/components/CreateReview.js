@@ -31,6 +31,8 @@ export class CreateReview extends Component {
       body: this.state.rev_body,
       stars: this.state.rev_stars,
     });
+    window.location.reload();
+
     event.preventDefault();
   }
 
