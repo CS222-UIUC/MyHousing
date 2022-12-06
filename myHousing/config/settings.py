@@ -69,9 +69,7 @@ ROOT_URLCONF = "config.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [
-            os.path.join(BASE_DIR, "reactapp/build")
-        ],
+        "DIRS": [os.path.join(BASE_DIR, "reactapp/build")],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -107,7 +105,7 @@ REST_FRAMEWORK = {
         "knox.auth.TokenAuthentication",
     ],
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
-    "PAGE_SIZE": 20,
+    "PAGE_SIZE": 5000,
 }
 
 # Password validation
@@ -147,8 +145,10 @@ USE_TZ = True
 STATIC_URL = "static/"
 MEDIA_URL = "media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),
-os.path.join(BASE_DIR, "reactapp/build/static"),)
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, "reactapp/build/static"),
+)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
