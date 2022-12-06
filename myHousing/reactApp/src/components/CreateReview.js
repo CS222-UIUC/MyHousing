@@ -45,6 +45,7 @@ export class CreateReview extends Component {
               <Form.Control
                 placeholder="Title"
                 name="rev_title"
+                maxlength="50"
                 value={this.state.rev_title}
                 onChange={this.onChange}
               />
@@ -53,6 +54,7 @@ export class CreateReview extends Component {
               <Form.Control
                 placeholder="Body"
                 name="rev_body"
+                maxlength="200"
                 value={this.state.rev_body}
                 onChange={this.onChange}
               />
