@@ -20,7 +20,7 @@ We were partially inspired by websites like RateMyDorm and Apartments.com. We re
 Our goals for the project are
  - our goals (todo)
 
-# System Overview 
+# Technical Architecture
 - (todo)
 
 # Requirements
