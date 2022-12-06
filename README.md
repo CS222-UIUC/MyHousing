@@ -24,7 +24,7 @@ Our goals for the project are
 - (todo)
 
 # Requirements
-Link to downloads are provided below.
+These are requirements to run the development website locally. Link to downloads are provided below.
 
 - [Python](https://www.python.org/downloads/)
 - [Node.js](https://nodejs.org/en/)
