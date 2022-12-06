@@ -35,46 +35,48 @@ export class CreateReview extends Component {
   }
 
   render() {
-    return (
-      <Container>
-        <Form style={{ margin: "50px" }}>
-          <Col>
-            <Form.Control
-              placeholder="Title"
-              name="rev_title"
-              value={this.state.rev_title}
-              onChange={this.onChange}
-            />
-          </Col>
-          <Col>
-            <Form.Control
-              placeholder="Body"
-              name="rev_body"
-              value={this.state.rev_body}
-              onChange={this.onChange}
-            />
-          </Col>
-          <Col>
-            <Form.Control
-              placeholder="Stars"
-              name="rev_stars"
-              type="number"
-              min="1"
-              max="5"
-              value={this.state.rev_stars}
-              onChange={this.onChange}
-            />
-          </Col>
-          <Button
-            variant="outline-secondary"
-            style={{ margin: "30px", float: "right" }}
-            onClick={this.handleSubmit}
-          >
-            Add Review
-          </Button>
-        </Form>
-      </Container>
-    );
+    if (this.props.isAuthenticated) {
+      return (
+        <Container>
+          <Form style={{ margin: "50px" }}>
+            <Col>
+              <Form.Control
+                placeholder="Title"
+                name="rev_title"
+                value={this.state.rev_title}
+                onChange={this.onChange}
+              />
+            </Col>
+            <Col>
+              <Form.Control
+                placeholder="Body"
+                name="rev_body"
+                value={this.state.rev_body}
+                onChange={this.onChange}
+              />
+            </Col>
+            <Col>
+              <Form.Control
+                placeholder="Stars"
+                name="rev_stars"
+                type="number"
+                min="1"
+                max="5"
+                value={this.state.rev_stars}
+                onChange={this.onChange}
+              />
+            </Col>
+            <Button
+              variant="outline-secondary"
+              style={{ margin: "30px", float: "right" }}
+              onClick={this.handleSubmit}
+            >
+              Add Review
+            </Button>
+          </Form>
+        </Container>
+      );
+    }
   }
 }
 
