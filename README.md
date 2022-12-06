@@ -15,7 +15,7 @@ Anirudh Ramesh and Anish Thiriveedhi worked on the frontend, developing most of 
 # Project Introduction
 At the University of Illinois, finding housing in a decent location for the right price requires a lot of research and time. Even then, we have to compare the amenities and services each realty provides and that simply is too time-consuming and tedious for us students. To alleviate this stress, we want to create a centralized web application in which people can share their experiences and compare different housing options. Our web application consists of a React frontend and a Django backend. 
 
-We were partially inspired by websites like RateMyDorm and Apartments.com to take on this project. We realized these sites were limited in the types of housing and the way current or past residents can communicate with each other about their experience. For example, RateMyDorm only had information about dorms. We wanted to create an application that tailored towards all available housing in the Urbana-Champaign area.
+We were partially inspired by websites like RateMyDorm and Apartments.com. We realized these sites were limited in the types of housing and the way current or past residents can communicate with each other about their experience. For example, RateMyDorm only had information about dorms. We wanted to create an application that tailored towards all available housing in the Urbana-Champaign area.
 
 Our goals for the project are
  - our goals (todo)
