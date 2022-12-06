@@ -3,6 +3,7 @@ import { Link, Navigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { MDBContainer, MDBInput, MDBBtn } from "mdb-react-ui-kit";
+import Button from 'react-bootstrap/Button'
 
 import { login } from "../actions/auth";
 
@@ -53,9 +54,9 @@ export class SignInPage extends Component {
             value={password}
           />
 
-          <MDBBtn type="submit" className="mb-4">
+          <Button variant="outline-secondary" type="submit">
             Sign in
-          </MDBBtn>
+          </Button>
           <p>
             Don't have an account? <Link to="/registrationPage">Register</Link>
           </p>

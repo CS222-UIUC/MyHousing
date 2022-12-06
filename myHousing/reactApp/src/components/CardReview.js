@@ -1,7 +1,6 @@
 import React from "react";
 import Card from 'react-bootstrap/Card';
-import logo from "./212_East_apartment.jpg"
-import logo1 from "./5stars.png"
+import logo from "./assets/aptIcon.png"
 import { Routes, Route, useNavigate, Link } from 'react-router-dom';
 import ReviewPage from "./ReviewPage";
 
@@ -15,7 +14,7 @@ const CardReview = ({ housingInfo }) => {
     return (
         <div onClick={()=>{toComponentB()}}>
             <Card style={{ width: '23rem' }} className="ml-10">
-                <Card.Img variant="top" src={logo} />
+                <Card.Img variant="top" src={logo} style={{ width: '5rem', marginLeft: '1vw', marginTop: '2vh' }}/>
                 <Card.Body>
                     <div className="font-[700] text-2xl">{housingInfo.housing_name}</div>
                     <div className="font-[700]">Address: {housingInfo.street_address}</div>

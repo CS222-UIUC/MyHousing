@@ -77,7 +77,6 @@ export class Header extends Component {
               className="me-auto my-2 my-lg-0"
               style={{ maxHeight: "100px" }}
             >
-              <Link to="/">Reviews</Link>
             </Nav>
           </Navbar.Collapse>
           {isAuthenticated ? authLinks : guestLinks}
