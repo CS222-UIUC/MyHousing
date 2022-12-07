@@ -23,15 +23,6 @@ function ReviewPage() {
         ></img>
       </header>
       <body>
-        <div class="relative flex items-center justify-center p-10">
-          <div class="absolute w-50">
-            <input
-              type="text"
-              placeholder="Search"
-              class="px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full pl-10"
-            />
-          </div>
-        </div>
         <div className="mt-[2vh] mb-[5vh] ml-[11vw] mr-[11vw]">
           <CreateReview id={location.state.housing_id} />
           <HousingReviewAPI housing_id={location.state.housing_id} />
@@ -39,7 +30,6 @@ function ReviewPage() {
         <div class="container">
           <ForumComp />
         </div>
-        <div className="z-20 text-9xl">hello</div>
       </body>
     </div>
   );
