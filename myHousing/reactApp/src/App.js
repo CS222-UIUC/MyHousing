@@ -46,9 +46,9 @@ function App() {
                     <section id="reviews">
                       <Reviews></Reviews>{" "}
                     </section>
-                    <section id="form-page">
+                    {/* <section id="form-page">
                       <FormPage />
-                    </section>
+                    </section> */}
                   </div>
                 }
               />
