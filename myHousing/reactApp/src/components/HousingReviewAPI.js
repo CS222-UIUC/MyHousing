@@ -32,18 +32,18 @@ class HousingReviewAPI extends Component {
     render() {
         return (
             <div>
-                    {this.state.wholeList.map(item => (
-                        item.housing_info == this.state.id 
-                        ? (<div>
-                            <HousingReviewCard review={item} />
-                        </div>) : null
-                        /*
-                          <div key={item.id}>
-                            <h1>{item.housing_name}</h1>
-                          </div>
-                        ))}
-                        */
+                {this.state.wholeList.map(item => (
+                    item.housing_info == this.state.id
+                    ? (<div>
+                        <HousingReviewCard review={item} />
+                    </div>) : null
+                    /*
+                        <div key={item.id}>
+                        <h1>{item.housing_name}</h1>
+                        </div>
                     ))}
+                    */
+                ))}
             </div>
         );
     }
