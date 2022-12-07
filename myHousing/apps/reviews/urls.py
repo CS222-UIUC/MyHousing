@@ -8,6 +8,7 @@ app_name = "reviews"
 router = routers.DefaultRouter()
 router.register(r"", ReviewsViewSet)
 
+# Including Reviews in routes
 urlpatterns = [
     path("", include(router.urls)),
 ]

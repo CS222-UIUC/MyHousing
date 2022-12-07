@@ -7,12 +7,12 @@ from knox.views import LoginView as KnoxLoginView
 from .models import User
 
 
-# Create your views here.
 class RegisterAPI(generics.GenericAPIView):
     permission_classes = (permissions.AllowAny,)
     serializer_class = RegisterSerializer
 
     def post(self, request, *args, **kwargs):
+        """Return custom response to a post request"""
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         user = serializer.save()
@@ -30,6 +30,7 @@ class LoginAPI(KnoxLoginView):
     permission_classes = (permissions.AllowAny,)
 
     def post(self, request, format=None):
+        """Return custom response to a post request"""
         serializer = AuthTokenSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         user = serializer.validated_data["user"]
@@ -45,7 +46,6 @@ class UserAPI(generics.RetrieveAPIView):
         return self.request.user
 
 
-# Used to debug/test
 class UserList(generics.ListAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer

@@ -12,6 +12,8 @@ from rest_framework.parsers import MultiPartParser, FormParser
 
 
 class HousingInfoViewSet(viewsets.ModelViewSet):
+    """HousingInfo Viewset for listing HousingInfo"""
+
     permission_classes = (IsAuthenticatedOrReadOnly,)
     queryset = HousingInfo.objects.all()
     serializer_class = HousingInfoSerializer
@@ -19,6 +21,8 @@ class HousingInfoViewSet(viewsets.ModelViewSet):
 
 
 class ReviewsViewSet(viewsets.ViewSet):
+    """HousingInfo Viewset for listing reviews associated with a primary key"""
+
     permission_classes = (IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly)
 
     def list(self, request, housinginfo_pk):

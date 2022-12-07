@@ -3,8 +3,10 @@ from django.core.validators import *
 from apps.housingInfo.models import HousingInfo
 from apps.users.models import User
 
-# Create your models here.
+
 class Reviews(models.Model):
+    """Review model that stores review for associated HousingInfo"""
+
     review_id = models.BigAutoField(primary_key=True)
     housing_info = models.ForeignKey(HousingInfo, on_delete=models.CASCADE)
     owner = models.ForeignKey(

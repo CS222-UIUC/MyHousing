@@ -5,7 +5,11 @@ from .models import Reviews
 
 
 class ReviewsSerializer(serializers.ModelSerializer):
-    owner = serializers.ReadOnlyField(source="owner.username")
+    """Serializer for Review model, used to display certain fields"""
+
+    owner = serializers.ReadOnlyField(
+        source="owner.username"
+    )  # Save the author of the review
 
     class Meta:
         model = Reviews

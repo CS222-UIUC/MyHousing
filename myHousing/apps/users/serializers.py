@@ -8,6 +8,8 @@ from .models import User
 
 
 class UserSerializer(serializers.ModelSerializer):
+    """Serializer User model, used to display certain fields"""
+
     reviews = serializers.PrimaryKeyRelatedField(
         many=True, queryset=Reviews.objects.all()
     )
@@ -18,6 +20,8 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class RegisterSerializer(serializers.ModelSerializer):
+    """Serializer for registering User model"""
+
     class Meta:
         model = User
         fields = ("id", "email", "password")
