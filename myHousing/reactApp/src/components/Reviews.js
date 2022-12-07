@@ -17,22 +17,12 @@ function Reviews() {
     const navToReviewPage = useNavigate();
     const navigateToReviewPage = () => {
         navToReviewPage('/reviewPage');
-        
+
     }
     return(
         <div >
             <div>
             <h1 className = "reviews pl-10 fw-700">Reviews</h1>
-            <InputGroup className="mb-3 pl-10">
-            <Form.Control
-            placeholder="Apartment Name"
-            aria-label="Apartment Name"
-            aria-describedby="basic-addon2"
-            />
-        <Button onClick = {navigateToReviewPage} variant="outline-secondary" id="button-addon2" >
-          Search
-        </Button>
-      </InputGroup>
             </div>
             <div>
             <ReviewListAPI/>
