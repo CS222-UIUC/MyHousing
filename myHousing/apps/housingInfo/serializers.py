@@ -4,6 +4,8 @@ from .models import HousingInfo
 
 
 class HousingInfoSerializer(serializers.ModelSerializer):
+    """Serializer for HousingInfo model, used to display certain fields"""
+
     image_filename = serializers.ImageField(required=False)
 
     class Meta:
