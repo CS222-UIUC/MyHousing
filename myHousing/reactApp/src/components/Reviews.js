@@ -1,24 +1,10 @@
-import React, {useState} from "react"
-import { MDBInputGroup, MDBInput, MDBIcon, MDBBtn } from 'mdb-react-ui-kit';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import React from "react"
+import { Routes, Route } from 'react-router-dom';
 import ReviewPage from "./ReviewPage";
-import Button from 'react-bootstrap/Button'
-import Card from 'react-bootstrap/Card';
-import InputGroup from 'react-bootstrap/InputGroup';
-import Form from 'react-bootstrap/Form';
-import logo from "./212_East_apartment.jpg"
-import logo1 from "./5stars.png"
 import "./Reviews.css"
 import ReviewListAPI from "./ReviewListAPI";
-import HousingReviewAPI from "./HousingReviewAPI";
 
 function Reviews() {
-    //const [showSearchAlert, setShowSearchAlert] = useState(false);
-    const navToReviewPage = useNavigate();
-    const navigateToReviewPage = () => {
-        navToReviewPage('/reviewPage');
-
-    }
     return(
         <div >
             <div>

@@ -1,12 +1,9 @@
-import React, {useMemo, Component} from "react";
-import { GoogleMap, LoadScript, useLoadScript, Marker, MarkerF, InfoWindow } from "@react-google-maps/api";
+import React, {Component} from "react";
+import { GoogleMap, LoadScript, MarkerF } from "@react-google-maps/api";
 import Geocode from "react-geocode";
-import logo from "./212_East_apartment.jpg"
-import logo1 from "./Here.jpg"
 import '../styles/globals.css'
-import { List } from "@mui/material";
 import ReviewPage from "./ReviewPage";
-import { Routes, Route, useNavigate, Link } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 
 const containerStyle = {
     width: '1400px',
@@ -30,22 +27,6 @@ const MapMarkers = ({ housingInfo }) => {
                 </Route>
             </Routes>
         </MarkerF>
-    )
-}
-
-const justAList = [
-    {"name": "second","lat": 40.3, "long": -88.2},
-    {"name": "first","lat": 40.5, "long": -87},
-    {"name": "third","lat": 40.4, "long": -88.4},
-    {"name": "fourth","lat": 40.5, "long": -88.5},
-    {"name": "fifth","lat": 40.6, "long": -88},
-    {"name": "sixth","lat": 40.7, "long": -88.1},
-];
-
-const markFunct = ({ item }) => {
-    console.log("Marked", item.name)
-    return (
-        <Marker position={getPosition(item.lat, item.long)}></Marker>
     )
 }
 
