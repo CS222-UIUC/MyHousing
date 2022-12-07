@@ -18,10 +18,16 @@ At the University of Illinois, finding housing in a decent location for the righ
 We were partially inspired by websites like RateMyDorm and Apartments.com. We realized these sites were limited in the types of housing and the way current or past residents can communicate with each other about their experience. For example, RateMyDorm only had information about dorms. We wanted to create an application that is tailored towards all available housing in the Urbana-Champaign area.
 
 Our goals for the project are
- - our goals (todo)
+ - Users can rate and share their experiences at a specific realty company or a specific apartment/dorm for others to see, where these reviews would be updated in real time
+ - Gather data on each housing option’s pricing/reviews/location/realty reputation/etc. and visualize, using the Maps JavaScript API, that information onto a map so that users can quickly and effectively gauge which parts of town are the best fit for their needs
+ - Each user will have their own profile to create their own reviews
+
 
 # Technical Architecture
-- (todo)
+
+We built our project using React with JavaScript for the frontend, Django for the backend, and PostgreSQL for the database.
+
+We used various React libraries to provide functionality to the frontend. For example, we used Axios to post data to the backend and Redux for authentication. We also used component libraries such as MUI and Bootstrap to simply implement certain components, such as the navigation bar and forms. 
 
 # Requirements
 These are requirements to run the development website locally. Link to downloads are provided below.
