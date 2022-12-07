@@ -86,7 +86,7 @@ The Django server should now be running locally on your machine.
 The react app should now be running on your local host. Go to http://localhost:3000.
 
 ### Running test cases.
-To run the test cases for the backend use the following command in the `myHousing` directory. You should be in the python virtual env before you run this.
+To run the test cases for the backend, use the following command in the `myHousing` directory. You should be in the python virtual env before you run this.
   ```console
   $ python .\manage.py test
   ```
