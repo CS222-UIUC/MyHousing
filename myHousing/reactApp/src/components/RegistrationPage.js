@@ -11,6 +11,7 @@ import {
   MDBInput,
   MDBIcon,
 } from "mdb-react-ui-kit";
+import Button from "react-bootstrap/Button";
 
 import { register } from "../actions/auth";
 import { createMessage } from "../actions/messages";
@@ -92,9 +93,9 @@ export class RegisterationPage extends Component {
                     value={password2}
                   />
                 </div>
-                <MDBBtn type="submit" className="mb-4" size="lg">
+                <Button variant="outline-secondary" type="submit">
                   Register
-                </MDBBtn>
+                </Button>
                 <p>
                   Already have an account? <Link to="/signIn">Login</Link>
                 </p>
