@@ -82,10 +82,13 @@ The Django server should now be running locally on your machine.
   ```console
   $ cd .\course-project-group-15\myHousing\reactApp\
   ```
-2. Run yarn.
+2. Run npm install if your running the application for the first time.
   ```console
-  $ yarn
-  $ yarn start
+  $ npm install
+  ```
+3. Run npm start.
+  ```console
+  $ npm start
   ```
 The react app should now be running on your localhost. 
 
