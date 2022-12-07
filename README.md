@@ -95,7 +95,7 @@ To run the test cases for the backend, use the following command in the `myHousi
 If you don't have any data in the PostgreSQL database or would like to upload your own data you can use the upload_data.py script located in the data folder of the repo. To run it, type the command below (you’ll need to be in the same directory).
 
   ```console
-  $python upload_data.py
+  $ python upload_data.py
   ```
  Note: You may need to remove the authentication permission class in the housingInfo `views.py` for this script to work.
  
