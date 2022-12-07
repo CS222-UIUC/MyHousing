@@ -85,6 +85,12 @@ The Django server should now be running locally on your machine.
   ```
 The react app should now be running on your local host. Go to http://localhost:3000.
 
+### Running test cases.
+To run the test cases for the backend using the following command in the `myHousing` directory. You should be in the python virtual env before you run this.
+  ```console
+  $ python .\manage.py test
+  ```
+
 # Populating Database
 If you don't have any data in the PostgreSQL database or would like to upload your own data you can use the upload_data.py script located in the data folder of the repo. To run it, type the command below (you’ll need to be in the same directory).
 
