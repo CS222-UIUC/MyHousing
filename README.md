@@ -34,16 +34,20 @@ These are requirements to run the development website locally. Links to download
 2. Clone the repository.
 3. Navigate into the `course-project-group-15` folder that was created.
    ```console
-   $ cd course-project-group-15
+   cd course-project-group-15
    ```
 4. Create a virtual environment. 
    ```console
-   $ python -m venv .venv
+   python -m venv .venv
    ```
 5. Activate the created virtual environment and install all the requirements in the `requirements.txt` file.
    ```console
-   $ .\.venv\Scripts\activate
-   $ pip install -r requirements.txt
+   .\.venv\Scripts\activate
+   pip install -r requirements.txt
+   ```
+   On mac run the following command to activate the virtual env.
+    ```console
+   source .venv/bin/ctivate
    ```
 6. Create a PostgreSQL database locally on your machine or in the cloud. 
 7. Create a `.env` file in the root directory of the repo containing the necessary information needed to access the database. Your `.env` file should look something like this.
@@ -61,34 +65,38 @@ To run the application, you will need to have the backend and frontend both runn
 ### Starting the backend.
 1. Activate the virtual environment.
    ```console
-   $ .\.venv\Scripts\activate
+   .\.venv\Scripts\activate
+   ```
+   On mac run the following command to activate the virtual env.
+    ```console
+   source .venv/bin/ctivate
    ```
 2. Start the Django server. The `manage.py` file can be found in the `myHousing` folder.
    ```console
-   $ cd .\myHousing
-   $ python .\manage.py runserver
+   cd .\myHousing
+   python .\manage.py runserver
    ```
 The Django server should now be running locally on your machine.
 
 ### Running the frontend.
 1. Move into the `reactApp` directory.
   ```console
-  $ cd .\course-project-group-15\myHousing\reactApp\
+  cd .\course-project-group-15\myHousing\reactApp\
   ```
 2. Run npm install if you are running the application for the first time.
   ```console
-  $ npm install
+  npm install
   ```
 3. Run npm start.
   ```console
-  $ npm start
+  npm start
   ```
 The react app should now be running on your local host. Go to http://localhost:3000.
 
 ### Running test cases.
 To run the test cases for the backend, use the following command in the `myHousing` directory. You should be in the python virtual env before you run this.
   ```console
-  $ python .\manage.py test
+  python .\manage.py test
   ```
 
 # Populating Database
